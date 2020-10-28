@@ -12,7 +12,12 @@ import FontColorBox from '../FontColorBox/FontColorBox';
 const SelectedFontDisplay = (props) => {
   return (
     <Box>
-      <FontColorBox size={props.size} color={props.color} abbr={props.abbr} />
+      <FontColorBox
+        size={props.size}
+        color={props.color}
+        abbr={props.abbr}
+        fontSize="2.2rem"
+      />
       <ul>
         <li>{props.label}</li>
       </ul>

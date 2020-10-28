@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Redux
 import { connect, useDispatch } from 'react-redux';
@@ -6,6 +6,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import FontListItem from '../FontListItem/FontListItem';
 
 const FontList = (props) => {
+  const [selected, setSelected] = useState(false);
   const dispatch = useDispatch();
 
   const onClick = (props) => {
@@ -14,6 +15,8 @@ const FontList = (props) => {
       type: 'SET_SELECTED_FONT',
       payload: props,
     });
+
+    setSelected(props.id);
   };
 
   const previewBoxes = props.store.myFontsResponse.content.map(
@@ -27,6 +30,7 @@ const FontList = (props) => {
           color={item.color}
           size="100"
           onClick={onClick}
+          selected={selected}
         />
       );
     }

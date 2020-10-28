@@ -9,6 +9,11 @@ import FontColorBox from '../FontColorBox/FontColorBox';
 import { Box } from '@material-ui/core';
 
 const FontListItem = (props) => {
+  let selected;
+  if (props.id === props.selected) {
+    selected = true;
+  }
+
   return (
     <Box className={styles.listBox}>
       <div onClick={() => props.onClick(props)}>
@@ -17,11 +22,14 @@ const FontListItem = (props) => {
           abbr={props.abbr}
           color={props.color}
           size={props.size}
+          selected={selected}
         />
       </div>
       <div className={styles.label}>
         <ul>
-          <li>{props.label}</li>
+          <li style={selected ? { color: 'rgba(0, 0, 0, 0.5)' } : null}>
+            {props.label}
+          </li>
         </ul>
       </div>
     </Box>
