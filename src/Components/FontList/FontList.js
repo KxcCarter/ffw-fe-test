@@ -11,12 +11,16 @@ const FontList = (props) => {
   const previewBoxes = props.store.myFontsResponse.content.map(
     (item, index) => {
       return (
-        <FontColorBox
-          id={item.id}
-          abbr={item.abbr}
-          color={item.color}
-          label={item.label}
-        />
+        <div key={index} className={styles.listBox}>
+          <div>
+            <FontColorBox id={item.id} abbr={item.abbr} color={item.color} />
+          </div>
+          <div className={styles.label}>
+            <ul>
+              <li>{item.label}</li>
+            </ul>
+          </div>
+        </div>
       );
     }
   );

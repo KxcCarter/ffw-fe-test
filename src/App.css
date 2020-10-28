@@ -14,8 +14,8 @@
 }
 
 .container {
-  border: 2px solid grey;
-  border-radius: 5px;
+  border: 3px solid rgb(196, 191, 191);
+  border-radius: 8px;
   padding: 3%;
 }
 
@@ -32,4 +32,9 @@
 
 .App-link {
   color: #61dafb;
+}
+
+li {
+  font-size: large;
+  font-weight: bold;
 }
