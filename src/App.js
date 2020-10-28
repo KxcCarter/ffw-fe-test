@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from './redux/mapStoreToProps';
 import './App.css';
@@ -21,9 +21,9 @@ const App = (props) => {
   }, [dispatch]);
 
   const { store } = props;
-
+  console.log('props match from APP.js', props.match);
   return (
-    <>
+    <React.Fragment>
       {store.tabs[0] && (
         <Container maxWidth="md">
           <Grid container spacing={2}>
@@ -34,6 +34,7 @@ const App = (props) => {
                 </Box>
               </Grid>
               <Box className="container">
+                <Redirect exact from="/" to="/fonts_a" />
                 <Route exact path="/fonts_a" component={MyFonts} />
                 <Route exact path="/fonts_b" component={BuyFonts} />
               </Box>
@@ -42,7 +43,7 @@ const App = (props) => {
           </Grid>
         </Container>
       )}
-    </>
+    </React.Fragment>
   );
 };
 

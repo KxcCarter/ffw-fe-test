@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
@@ -8,17 +8,27 @@ import styles from '../Header/Header.styles.module.css';
 import { Grid, Box } from '@material-ui/core';
 
 const Header = (props) => {
+  const [currentTab, setCurrentTab] = useState(101);
+
   const tabs = props.store.tabs.map((item, index) => {
     return (
       <Link
+        onClick={() => {
+          setCurrentTab(item.id);
+        }}
         key={index}
         to={item.content_endpoint}
-        style={{ textDecoration: 'none' }}
+        style={{
+          textDecoration: 'none',
+          color: currentTab === item.id ? 'grey' : 'orange',
+        }}
       >
         <h5 className={styles.tab}>{item.label}</h5>
       </Link>
     );
   });
+
+  console.log(props.match);
 
   return (
     <Grid

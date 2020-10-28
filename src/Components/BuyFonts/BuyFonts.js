@@ -19,7 +19,6 @@ const BuyFonts = (props) => {
     dispatch({ type: 'GET_BUY_FONTS', payload: props.match.path });
   }, [dispatch, props.match.path]);
 
-  console.log('match.params:', props.match);
   return (
     <Grid item xs={12}>
       {props.store.buyFonts.type && (
