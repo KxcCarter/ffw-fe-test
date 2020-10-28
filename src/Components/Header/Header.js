@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 import styles from '../Header/Header.styles.module.css';
 
 // MUI
@@ -12,8 +14,8 @@ const Header = (props) => {
       </Grid>
       <Grid item xs={12} sm={6}>
         <Box>
-          <Button variant="text">my fonts</Button>
-          <Button variant="text">buy fonts</Button>
+          <Button variant="text">{props.store.tabs[0].label}</Button>
+          <Button variant="text">{props.store.tabs[1].label}</Button>
         </Box>
         {/* <h5 className={styles.tab}>my fonts</h5>
         <h5 className={styles.tab}>buy fonts</h5> */}
@@ -22,4 +24,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default connect(mapStoreToProps)(Header);

@@ -1,8 +1,6 @@
 .box {
   border: 2px solid black;
   border-radius: 20px;
-  /* width: 110px;
-  height: 110px; */
   position: relative;
 }
 

@@ -11,7 +11,7 @@ import { Box } from '@material-ui/core';
 const FontListItem = (props) => {
   return (
     <Box className={styles.listBox}>
-      <div>
+      <div onClick={() => props.onClick(props)}>
         <FontColorBox
           id={props.id}
           abbr={props.abbr}

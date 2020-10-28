@@ -5,12 +5,10 @@ import mapStoreToProps from './redux/mapStoreToProps';
 import './App.css';
 
 // MUI
-
 import { Container, Grid } from '@material-ui/core';
 
 // Components
 import Header from './Components/Header/Header';
-import FontList from './Components/FontList/FontList';
 import Body from './Components/Body/Body';
 
 const App = (props) => {
@@ -18,43 +16,38 @@ const App = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getLorem();
-
+    // getLorem();
     dispatch({ type: 'GET_BUY_FONTS' });
     dispatch({ type: 'GET_MY_FONTS' });
+    dispatch({ type: 'GET_TABS' });
   }, [dispatch]);
 
-  const getLorem = async () => {
-    try {
-      const resp = await axios.get('http://json.ffwagency.md/fonts_b');
-      console.log(resp.data);
-      setData(resp.data.content);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const { store } = props;
+
+  // const getLorem = async () => {
+  //   try {
+  //     const resp = await axios.get('http://json.ffwagency.md/fonts_b');
+  //     console.log(resp.data);
+  //     setData(resp.data.content);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   return (
-    <Container maxWidth="md">
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Header />
-        </Grid>
+    <>
+      {store.tabs[0] && (
+        <Container maxWidth="md">
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Header />
+            </Grid>
 
-        <Body />
-
-        {/* <div className="container">
-          <Grid item xs={5} sm={5}>
-            <h1>Stuff here</h1>
-            <div>{data}</div>
+            <Body />
           </Grid>
-
-          <Grid item xs={7} sm={7}>
-            <div>{props.store.myFontsResponse.content && <FontList />}</div>
-          </Grid>
-        </div> */}
-      </Grid>
-    </Container>
+        </Container>
+      )}
+    </>
   );
 };
 
