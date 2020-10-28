@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../../App.css';
 
@@ -11,6 +11,11 @@ import FontList from '../FontList/FontList';
 import SelectedFontDisplay from '../SelectedFontDisplay/SelectedFontDisplay';
 
 const MyFonts = (props) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'GET_MY_FONTS', payload: props.match.path });
+  }, [dispatch]);
   return (
     <Grid container spacing={5} className="container">
       <Grid item xs={12} sm={5}>
@@ -21,10 +26,11 @@ const MyFonts = (props) => {
           abbr={props.store.selectedFont.abbr || 'NA'}
         />
       </Grid>
-
-      <Grid item xs={12} sm={7}>
-        <div>{props.store.myFontsResponse.content && <FontList />}</div>
-      </Grid>
+      {props.store.myFonts.type && (
+        <Grid item xs={12} sm={7}>
+          <div>{props.store.myFonts.content && <FontList />}</div>
+        </Grid>
+      )}
     </Grid>
   );
 };

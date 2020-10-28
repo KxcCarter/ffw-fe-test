@@ -5,12 +5,12 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import styles from '../Header/Header.styles.module.css';
 
 // MUI
-import { Button, Grid, Box } from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 
 const Header = (props) => {
   const tabs = props.store.tabs.map((item, index) => {
     return (
-      <Link to={item.content_endpoint}>
+      <Link to={item.content_endpoint} style={{ textDecoration: 'none' }}>
         <h5 className={styles.tab}>{item.label}</h5>
       </Link>
     );

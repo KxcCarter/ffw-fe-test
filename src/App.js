@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from './redux/mapStoreToProps';
@@ -14,27 +13,13 @@ import MyFonts from './Components/MyFonts/MyFonts';
 import BuyFonts from './Components/BuyFonts/BuyFonts';
 
 const App = (props) => {
-  const [data, setData] = useState();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // getLorem();
-    dispatch({ type: 'GET_BUY_FONTS' });
-    dispatch({ type: 'GET_MY_FONTS' });
     dispatch({ type: 'GET_TABS' });
   }, [dispatch]);
 
   const { store } = props;
-
-  // const getLorem = async () => {
-  //   try {
-  //     const resp = await axios.get('http://json.ffwagency.md/fonts_b');
-  //     console.log(resp.data);
-  //     setData(resp.data.content);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
 
   return (
     <>

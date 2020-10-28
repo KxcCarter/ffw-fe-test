@@ -19,22 +19,20 @@ const FontList = (props) => {
     setSelected(props.id);
   };
 
-  const previewBoxes = props.store.myFontsResponse.content.map(
-    (item, index) => {
-      return (
-        <FontListItem
-          key={index}
-          label={item.label}
-          id={item.id}
-          abbr={item.abbr}
-          color={item.color}
-          size="100"
-          onClick={onClick}
-          selected={selected}
-        />
-      );
-    }
-  );
+  const previewBoxes = props.store.myFonts.content.map((item, index) => {
+    return (
+      <FontListItem
+        key={index}
+        label={item.label}
+        id={item.id}
+        abbr={item.abbr}
+        color={item.color}
+        size="100"
+        onClick={onClick}
+        selected={selected}
+      />
+    );
+  });
 
   return previewBoxes;
 };
