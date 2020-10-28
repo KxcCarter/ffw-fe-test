@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from './redux/mapStoreToProps';
 import './App.css';
@@ -9,7 +10,8 @@ import { Container, Grid } from '@material-ui/core';
 
 // Components
 import Header from './Components/Header/Header';
-import Body from './Components/Body/Body';
+import MyFonts from './Components/MyFonts/MyFonts';
+import BuyFonts from './Components/BuyFonts/BuyFonts';
 
 const App = (props) => {
   const [data, setData] = useState();
@@ -39,11 +41,13 @@ const App = (props) => {
       {store.tabs[0] && (
         <Container maxWidth="md">
           <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Header />
-            </Grid>
-
-            <Body />
+            <Router>
+              <Grid item xs={12}>
+                <Header />
+              </Grid>
+              <Route exact path="/fonts_a" component={MyFonts} />
+              <Route exact path="/fonts_b" component={BuyFonts} />
+            </Router>
           </Grid>
         </Container>
       )}

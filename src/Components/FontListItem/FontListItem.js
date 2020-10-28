@@ -27,9 +27,7 @@ const FontListItem = (props) => {
       </div>
       <div className={styles.label}>
         <ul>
-          <li style={selected ? { color: 'rgba(0, 0, 0, 0.5)' } : null}>
-            {props.label}
-          </li>
+          <li style={selected ? { opacity: '50%' } : null}>{props.label}</li>
         </ul>
       </div>
     </Box>

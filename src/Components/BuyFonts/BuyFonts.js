@@ -7,12 +7,11 @@ import '../../App.css';
 import { Grid } from '@material-ui/core';
 
 // Components
-import FontList from '../FontList/FontList';
 import SelectedFontDisplay from '../SelectedFontDisplay/SelectedFontDisplay';
 
-const Body = (props) => {
+const BuyFonts = (props) => {
   return (
-    <Grid container spacing={2} className="container">
+    <Grid container spacing={5} className="container">
       <Grid item xs={12} sm={5}>
         <SelectedFontDisplay
           size="200"
@@ -23,10 +22,10 @@ const Body = (props) => {
       </Grid>
 
       <Grid item xs={12} sm={7}>
-        <div>{props.store.myFontsResponse.content && <FontList />}</div>
+        <div>{props.store.buyFontsResponse.content}</div>
       </Grid>
     </Grid>
   );
 };
 
-export default connect(mapStoreToProps)(Body);
+export default connect(mapStoreToProps)(BuyFonts);
