@@ -9,6 +9,10 @@ import { Grid } from '@material-ui/core';
 import FontList from '../FontList/FontList';
 import SelectedFontDisplay from '../SelectedFontDisplay/SelectedFontDisplay';
 
+const style = {
+  padding: '30px',
+};
+
 const MyFonts = (props) => {
   const dispatch = useDispatch();
 
@@ -18,7 +22,7 @@ const MyFonts = (props) => {
   }, [dispatch, props.match.path]);
 
   return (
-    <Grid container spacing={5}>
+    <Grid container spacing={5} style={style}>
       <Grid item xs={12} sm={5}>
         <SelectedFontDisplay
           size="200"
