@@ -2,11 +2,6 @@
   display: inline-flex;
 }
 
-.tabsBox {
-  /* flex: auto; */
-  /* float: right; */
-}
-
 .tab {
   display: inline;
   text-transform: uppercase;

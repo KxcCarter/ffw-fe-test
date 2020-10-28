@@ -1,0 +1,9 @@
+.fontItem {
+  width: 100%;
+  /* padding: 20px; */
+}
+
+.listBox {
+  display: inline-flex;
+  padding: 25px;
+}
