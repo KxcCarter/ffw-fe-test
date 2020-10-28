@@ -20,11 +20,9 @@ const App = (props) => {
     dispatch({ type: 'GET_TABS' });
   }, [dispatch]);
 
-  const { store } = props;
-  console.log('props match from APP.js', props.match);
   return (
     <React.Fragment>
-      {store.tabs[0] && (
+      {props.store.tabs[0] && (
         <Container maxWidth="md">
           <Grid container spacing={2}>
             <Router>

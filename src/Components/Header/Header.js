@@ -28,8 +28,6 @@ const Header = (props) => {
     );
   });
 
-  console.log(props.match);
-
   return (
     <Grid
       container
