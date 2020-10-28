@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 import rootReducer from './redux/reducers/_rootReducer';
+import rootSaga from './redux/sagas/_root.saga';
 
 import './index.css';
 import App from './App';
@@ -13,16 +14,16 @@ import reportWebVitals from './reportWebVitals';
 const sagaMiddleware = createSagaMiddleware();
 
 // Remove redux logger before submitting
-const middlewareList = [logger];
+const middlewareList = [sagaMiddleware, logger];
 
 const store = createStore(rootReducer, applyMiddleware(...middlewareList));
 
+sagaMiddleware.run(rootSaga);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 
