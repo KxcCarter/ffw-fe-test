@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from '../FontListItem/FontListItem.styles.module.css';
-
-// Redux
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-import FontColorBox from '../FontColorBox/FontColorBox';
+// MUI
 import { Box } from '@material-ui/core';
+
+// Components
+import FontColorBox from '../FontColorBox/FontColorBox';
 
 const FontListItem = (props) => {
   let selected;

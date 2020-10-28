@@ -6,7 +6,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Box } from '@material-ui/core';
 
 // Components
-
 import FontColorBox from '../FontColorBox/FontColorBox';
 
 const SelectedFontDisplay = (props) => {

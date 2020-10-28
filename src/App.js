@@ -5,12 +5,13 @@ import mapStoreToProps from './redux/mapStoreToProps';
 import './App.css';
 
 // MUI
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Box } from '@material-ui/core';
 
 // Components
 import Header from './Components/Header/Header';
 import MyFonts from './Components/MyFonts/MyFonts';
 import BuyFonts from './Components/BuyFonts/BuyFonts';
+import Footer from './Components/Footer/Footer';
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -30,9 +31,12 @@ const App = (props) => {
               <Grid item xs={12}>
                 <Header />
               </Grid>
-              <Route exact path="/fonts_a" component={MyFonts} />
-              <Route exact path="/fonts_b" component={BuyFonts} />
+              <Box className="container">
+                <Route exact path="/fonts_a" component={MyFonts} />
+                <Route exact path="/fonts_b" component={BuyFonts} />
+              </Box>
             </Router>
+            <Footer />
           </Grid>
         </Container>
       )}

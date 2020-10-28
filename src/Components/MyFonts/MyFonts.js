@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import '../../App.css';
 
 // MUI
 import { Grid } from '@material-ui/core';
@@ -14,10 +13,12 @@ const MyFonts = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.title = 'This is the My Fonts page';
     dispatch({ type: 'GET_MY_FONTS', payload: props.match.path });
   }, [dispatch]);
+
   return (
-    <Grid container spacing={5} className="container">
+    <Grid container spacing={5}>
       <Grid item xs={12} sm={5}>
         <SelectedFontDisplay
           size="200"

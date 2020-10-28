@@ -19,16 +19,17 @@ const FontColorBox = (props) => {
   };
   return (
     <div className={styles.box} style={boxProps.box}>
-      <div className={styles.innerBox} style={{ backgroundColor: props.color }}>
-        <h2 className={styles.abbr} style={boxProps.abbr}>
+      <div
+        className={styles.innerBox}
+        style={{ backgroundColor: props.color }}
+        aria-label={props['color-blind-label']}
+      >
+        <p className={styles.abbr} style={boxProps.abbr}>
           {props.abbr}
-        </h2>
-        {/* <Typography variant={props.fontSize || 'h4'} className={styles.abbr}>
-          {props.abbr}
-        </Typography> */}
+        </p>
       </div>
 
-      <h1>{props.label}</h1>
+      <p>{props.label}</p>
     </div>
   );
 };
