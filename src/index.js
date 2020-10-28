@@ -13,7 +13,6 @@ import reportWebVitals from './reportWebVitals';
 
 const sagaMiddleware = createSagaMiddleware();
 
-// Remove redux logger before submitting
 const middlewareList = [sagaMiddleware, logger];
 
 const store = createStore(rootReducer, applyMiddleware(...middlewareList));

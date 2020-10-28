@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
-// Redux
 import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+
+// Components
 import FontListItem from '../FontListItem/FontListItem';
 
 const FontList = (props) => {

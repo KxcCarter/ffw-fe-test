@@ -10,7 +10,11 @@ import { Grid, Box } from '@material-ui/core';
 const Header = (props) => {
   const tabs = props.store.tabs.map((item, index) => {
     return (
-      <Link to={item.content_endpoint} style={{ textDecoration: 'none' }}>
+      <Link
+        key={index}
+        to={item.content_endpoint}
+        style={{ textDecoration: 'none' }}
+      >
         <h5 className={styles.tab}>{item.label}</h5>
       </Link>
     );
@@ -19,16 +23,16 @@ const Header = (props) => {
   return (
     <Grid
       container
-      spacing={2}
+      spacing={3}
       direction="row"
       justify="space-between"
-      alignItems="center"
+      alignItems="baseline"
     >
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={7} md={9}>
         <h1>Please select one font</h1>
       </Grid>
 
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={5} md={3}>
         <Box>{tabs}</Box>
       </Grid>
     </Grid>

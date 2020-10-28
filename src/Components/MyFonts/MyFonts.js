@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
@@ -15,7 +15,7 @@ const MyFonts = (props) => {
   useEffect(() => {
     document.title = 'This is the My Fonts page';
     dispatch({ type: 'GET_MY_FONTS', payload: props.match.path });
-  }, [dispatch]);
+  }, [dispatch, props.match.path]);
 
   return (
     <Grid container spacing={5}>

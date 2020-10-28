@@ -6,12 +6,9 @@ import '../../App.css';
 // MUI
 import { Grid } from '@material-ui/core';
 
-// Components
-import SelectedFontDisplay from '../SelectedFontDisplay/SelectedFontDisplay';
-
 const style = {
   margin: 'auto',
-  width: '75%',
+  width: '70%',
 };
 
 const BuyFonts = (props) => {
@@ -20,7 +17,7 @@ const BuyFonts = (props) => {
   useEffect(() => {
     document.title = 'This is the Buy Fonts page';
     dispatch({ type: 'GET_BUY_FONTS', payload: props.match.path });
-  }, [dispatch]);
+  }, [dispatch, props.match.path]);
 
   console.log('match.params:', props.match);
   return (

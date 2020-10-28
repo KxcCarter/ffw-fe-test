@@ -29,7 +29,9 @@ const App = (props) => {
           <Grid container spacing={2}>
             <Router>
               <Grid item xs={12}>
-                <Header />
+                <Box p={1} pb={0}>
+                  <Header />
+                </Box>
               </Grid>
               <Box className="container">
                 <Route exact path="/fonts_a" component={MyFonts} />
