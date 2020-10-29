@@ -1,5 +1,8 @@
 # FFW Front End/React Test Project
 
+## Usage
+Press 'tab' key to cycle through fonts or change current active page (My Fonts or Buy Fonts).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
