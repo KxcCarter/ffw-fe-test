@@ -23,7 +23,9 @@ const Header = (props) => {
           color: currentTab === item.id ? 'grey' : 'orange',
         }}
       >
-        <h5 className={styles.tab}>{item.label}</h5>
+        <h5 className={styles.tab} aria-labelledby={`${item.label} tab`}>
+          {item.label}
+        </h5>
       </Link>
     );
   });

@@ -22,6 +22,7 @@ const FontListItem = (props) => {
           id={props.id}
           abbr={props.abbr}
           color={props.color}
+          colorLabel={props.colorLabel}
           size={props.size}
           selected={selected}
         />

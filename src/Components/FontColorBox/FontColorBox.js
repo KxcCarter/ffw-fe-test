@@ -17,12 +17,13 @@ const FontColorBox = (props) => {
       fontSize: props.fontSize || '1.8rem',
     },
   };
+
   return (
     <div className={styles.box} style={boxProps.box}>
       <div
         className={styles.innerBox}
         style={{ backgroundColor: props.color }}
-        aria-label={props['color-blind-label']}
+        aria-label={props.colorLabel}
       >
         <p className={styles.abbr} style={boxProps.abbr}>
           {props.abbr}

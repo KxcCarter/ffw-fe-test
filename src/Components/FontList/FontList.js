@@ -27,6 +27,7 @@ const FontList = (props) => {
         id={item.id}
         abbr={item.abbr}
         color={item.color}
+        colorLabel={item['color-blind-label']}
         size="100"
         onClick={onClick}
         selected={selected}
