@@ -13,6 +13,7 @@ const Header = (props) => {
   const tabs = props.store.tabs.map((item, index) => {
     return (
       <Link
+        tabIndex="0"
         onClick={() => {
           setCurrentTab(item.id);
         }}
