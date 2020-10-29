@@ -19,8 +19,8 @@ const FontListItem = (props) => {
     <Box className={styles.listBox}>
       <div
         tabIndex="0"
-        onClick={() => props.onClick(props)}
         onFocus={() => props.onClick(props)}
+        onClick={() => props.onClick(props)}
       >
         <FontColorBox
           id={props.id}

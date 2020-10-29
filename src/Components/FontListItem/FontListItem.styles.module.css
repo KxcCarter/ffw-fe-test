@@ -8,6 +8,10 @@
   padding-bottom: 50px;
 }
 
+.listBox > div:focus {
+  outline: none;
+}
+
 .label {
   padding-left: 10px;
 }
