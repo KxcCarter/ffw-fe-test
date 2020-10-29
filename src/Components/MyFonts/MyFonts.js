@@ -27,7 +27,7 @@ const MyFonts = (props) => {
         <SelectedFontDisplay
           size="200"
           label={props.store.selectedFont.label || 'NA'}
-          color={props.store.selectedFont.color || 'black'}
+          color={props.store.selectedFont.color || 'grey'}
           abbr={props.store.selectedFont.abbr || 'NA'}
         />
       </Grid>

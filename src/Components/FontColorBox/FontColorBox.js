@@ -14,7 +14,7 @@ const FontColorBox = (props) => {
         : '2px solid black',
     },
     abbr: {
-      fontSize: props.fontSize || '1.3rem',
+      fontSize: props.fontSize || '1.8rem',
     },
   };
   return (

@@ -15,7 +15,7 @@ const SelectedFontDisplay = (props) => {
         size={props.size}
         color={props.color}
         abbr={props.abbr}
-        fontSize="2.5rem"
+        fontSize="3.5rem"
       />
       <ul>
         <li>{props.label}</li>
